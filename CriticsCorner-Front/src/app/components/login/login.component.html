@@ -1,0 +1,14 @@
+<div class=" container col-md-6">
+    <h1 style="color: rgb(46, 21, 138)">User login</h1>
+    <form (ngSubmit)="userLogin()" class="col-5">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Username</label>
+            <input type="email" class="form-control" [(ngModel)]="user.user_id" id="user_id" name="user_id" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Password</label>
+            <input type="password" class="form-control" [(ngModel)]="user.password" id="password" name="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </div>
