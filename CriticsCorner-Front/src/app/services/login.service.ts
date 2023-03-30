@@ -7,7 +7,7 @@ import { User } from '../../classes/user';
   providedIn: 'root'
 })
 export class LoginService {
-  private baseUrl="http://localhost:8081/login";
+  private baseUrl="http://localhost:8081/auth/login";
 
   constructor(private httpClient: HttpClient ) { }
 

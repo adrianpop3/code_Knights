@@ -1,5 +1,6 @@
 export class User {
-    name!: string;
-    user_id!: string;
+    id!: string;
+    username!: string;
     password!: string;
+    email!:string
 }
