@@ -1,0 +1,79 @@
+:root{
+    --pink: #db5d7a;
+    --pinkhover:  #be3455;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(0deg, rgba(190,52,85,1) 0%, rgba(251,243,228,1) 100%);
+  }
+
+.central {
+    background: rgba(251,243,228,1);
+    height: 500px;
+    width: 800px;
+
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+.title {
+    margin: 20px 0 20px 0;
+    text-align: center;
+    }
+
+.content{
+    display: flex;
+    height: 400px;
+}
+
+.logo {
+    display: flex;
+    height: 400px;
+    width: 400px;
+    justify-content: flex-end;
+    align-items: center;
+    border-right: 5px solid rgba(190,52,85,1);
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+    --webkit-appearence: none;
+    }
+
+img{
+    padding-right: 30px;
+    height: 120px;
+    width: 220px;
+}
+
+form{
+    height: 400px;
+    width: 500px;
+    display: flex;
+    padding-left: 150px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.input-group, input{
+    width: 250px;
+}
+
+form input::placeholder {
+    color: black;
+    opacity: 70%;
+}
+
+.input-group i{
+    text-align: center;
+    padding-top: 10px;
+}
+
+
+
+

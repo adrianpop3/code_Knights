@@ -9,11 +9,14 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = "Users")
+
 public class User {
 
     @Id
     @Column(name = "ID")
-    private int id;
-    private String name;
+
+    private String email;
+    private String username;
+    private String password;
 
 }
