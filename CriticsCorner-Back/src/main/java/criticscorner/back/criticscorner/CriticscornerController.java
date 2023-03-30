@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CriticscornerController {
 
-    @RequestMapping("/hello")
-    String hello() {
-        return "Hello World, Let's start Spring Boot Project!";
-    }
+//    @RequestMapping("/hello")
+//    String hello() {
+//        return "Hello World, Let's start Spring Boot Project!";
+//    }
 }
