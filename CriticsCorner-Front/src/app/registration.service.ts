@@ -14,6 +14,6 @@ export class RegistrationService {
 
   registerUser(user: User): Observable<Object>{
     console.log(user);
-    return this.httpClient.post('baseUrl', user);
+    return this.httpClient.post('${this.baseUrl}', user);
   }
 }

@@ -13,25 +13,25 @@
                 <br>
                 <div class="input-group mb-3">
                   <i class="fa-solid fa-envelope fa-user input-group-text"></i>
-                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="E-mail" [(ngModel)]="user.email">
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="E-mail" name="email" [(ngModel)]="user.email">
                 </div>
               
                 <div class="input-group mb-3">
                   <i class="fa-solid fa-user input-group-text"></i>
-                  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="user.username">
+                  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="username" [(ngModel)]="user.username">
                 </div>
 
                 <div class="input-group mb-3">
                     <i class="fa-solid fa-lock input-group-text"></i>
-                    <input type="password" id="inputPassword6" class="form-control" aria-labelledby="passwordHelpInline" placeholder="Password" [(ngModel)]="user.password">
+                    <input type="password" id="inputPassword" class="form-control" aria-labelledby="passwordHelpInline" placeholder="Password" name="password" [(ngModel)]="user.password">
                   </div>
 
                   <div class="input-group mb-3">
                     <i class="fa-solid fa-lock input-group-text"></i>
-                    <input type="password" id="inputPassword6" class="form-control" aria-labelledby="passwordHelpInline" placeholder="Confirm Password" [(ngModel)]="user.confirmpassword">
+                    <input type="password" id="inputPasswordConfirm" class="form-control" aria-labelledby="passwordHelpInline" placeholder="Confirm Password" name="confirmpassword" [(ngModel)]="user.confirmpassword">
                   </div>
               
-                <button type="button" class="btn btn-primary btn-sm" id="liveAlertBtn">Register</button>
+                <button type="submit" class="btn btn-primary btn-sm" id="liveAlertBtn">Register</button>
               </form>
         </div>
       </div>
