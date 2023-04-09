@@ -16,11 +16,11 @@ export class RegistrationComponent implements OnInit{
   ngOnInit(): void{
   }
 
-  userRegister(){
-    console.log(this.user)
-    this.registerService.registerUser(this.user).subscribe(data=>{
-      alert("Succesfully user registered!")
-    }, error=>alert("Sorry, user not registered!"));
+  userRegister() {
+    this.registerService.registerUser(this.user)
+      .subscribe(data=>{
+        alert("User succesfully registered!")
+    },  error=>alert("Sorry, registration failed!"));
   }
 
 }

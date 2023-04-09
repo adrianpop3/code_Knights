@@ -14,6 +14,12 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
+    @PostMapping("/register")
+    public ResponseEntity<User> registerUser(@RequestBody User user) {
+        User newUser = userRepository.save(user);
+        return ResponseEntity.ok(newUser);
+    }
+
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody User userData) {
         User user = userRepository.findByUsername(userData.getUsername());
