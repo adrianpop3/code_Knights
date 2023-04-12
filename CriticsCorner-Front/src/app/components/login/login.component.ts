@@ -15,8 +15,7 @@ export class LoginComponent {
 
   userLogin() {
     this.loginService.loginUser(this.user)
-      .subscribe(data => {
-        //alert("Login successfully!")
+      .subscribe( (response: any) => {
         this.router.navigate(['/home']);
       }, error => alert("Login failed!"));
   }
