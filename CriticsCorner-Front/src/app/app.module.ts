@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { RegistrationComponent } from './components/registration/registration.component';
 import{ HttpClientModule} from '@angular/common/http'
 import { LoginComponent } from './components/login/login.component';
-import { UserComponent } from './user/user.component'
+import { UserComponent } from './components/user/user.component'
 
 @NgModule({
   declarations: [
