@@ -3,6 +3,7 @@ package criticscorner.back.criticscorner.services;
 import criticscorner.back.criticscorner.exceptions.MovieNotFoundException;
 import criticscorner.back.criticscorner.models.Movie;
 import criticscorner.back.criticscorner.repositories.MovieRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,6 +35,7 @@ public class MovieService {
         return movieRepository.save(movie);
     }
 
+    @Transactional
     public void deleteMovie(Long id) {
         movieRepository.deleteMovieById(id);
     }
