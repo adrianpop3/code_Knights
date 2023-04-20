@@ -1,1 +1,43 @@
-<app-navbar></app-navbar>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" style="color:white;">Critics' Corner</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarColor02">
+     <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+           <a class="nav-link">Do Something<span class="sr-only">(current)</span></a>
+        </li>
+     </ul>
+     <form class="form-inline my-2 my-lg-0">
+        <input type="search"name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search movies..." required>
+     </form>
+  </div>
+</nav>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+
+<div class="container">
+<div class="row mt-n1-9">
+                    <div *ngFor="let movie of movies"  class="col-md-6 col-xl-3 mt-1-9 wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                        <div class="team-style07 card-container">
+                            <div class="team-thumb mb-1-9">
+                                <div class="thumb"><img src="{{ movie?.imageUrl }}" class="rounded-circle card-img" alt="..."></div>
+                                <div class="team-social">
+                                    <ul class="styled-icons">
+                                        <li><a class="styled-icons-item" href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a class="styled-icons-item" href="#!"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a class="styled-icons-item" href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body p-3">
+                                <div class="movie-details text-truncate">
+                                  <h3 class="h5 mb-1">{{ movie?.title }}</h3>
+                                  <p class="mb-0">{{ movie?.category }}</p>
+                                </div>
+                            </div>                              
+                        </div>
+                    </div>
+                </div>
+</div>
