@@ -1,33 +1,38 @@
 @import 'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css';
 @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css';
 
-a {
-    cursor: pointer;
-  }
-  
-  .navbar {
-    margin-bottom: 30px;
-  }
+    a {
+        cursor: pointer;
+        text-decoration:none; 
+    }
 
-  body {
-        margin-top:20px;
-        background:#22ba14;
+    .navbar {
+        margin-bottom: 30px;
+    }
+
+    body {
+        height: 100vh;
+        background: linear-gradient(0deg, rgba(190,52,85,1) 0%, rgba(251,243,228,1) 100%);
     }
 
     img {
+        /* vertical-align: bottom; */
         max-width: 100%;
+        width: 100%;
         height: auto;
-        vertical-align: top;
+        display: block;
+        margin: 0 auto;
+        object-fit: cover;
     }
+
     .mb-1 {
         margin-bottom: 0.25rem!important;
     }
+
     .h5, h5 {
         font-size: 1.25rem;
     }
-    a {
-    text-decoration:none;    
-    }
+
     .team-style07 {
         background: #fbf3e4;
         text-align: center;
@@ -179,6 +184,11 @@ a {
         justify-content: center;
         align-items: center;
         height: 100%;
+        /* position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 1rem;
+        box-sizing: border-box; */
       }
       
         
