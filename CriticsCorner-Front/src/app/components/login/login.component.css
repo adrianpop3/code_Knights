@@ -1,7 +1,7 @@
 
 body {
     height: 100vh;
-    background: linear-gradient(0deg, rgba(190,52,85,1) 0%, rgba(251,243,228,1) 100%);
+    background: linear-gradient(0deg, #be3455 0%, #fbf3e4 100%);
 }
 
 .central {
