@@ -30,10 +30,14 @@
   background-color:rgba(190, 52, 85, 1);
 }
 
+.search input::placeholder {
+  color: black;
+}
+
 .buttons {
   display: flex;
   align-items: center;
-  padding-left: 220px;
+  padding-left: 100px;
   padding-right: 35px;
 }
 
