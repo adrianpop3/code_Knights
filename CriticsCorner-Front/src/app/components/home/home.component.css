@@ -6,14 +6,19 @@
         text-decoration:none; 
     }
 
-    .navbar {
+    /* .navbar {
         margin-bottom: 30px;
-    }
+    } */
 
     body {
         height: 100vh;
-        background:  rgba(251,243,228,1);
     }
+
+    .bg-color {
+        background: rgba(251,243,228,1);
+        /* background: linear-gradient(0deg, #be3455 0%, #fbf3e4 100%); */
+    }
+
 
     img {
         /* vertical-align: bottom; */
