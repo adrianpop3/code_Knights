@@ -1,0 +1,24 @@
+<head>
+    <script src="https://www.youtube.com/player_api"></script>
+    <script>
+        // create a new player object
+        var player;
+      
+        function onYouTubePlayerAPIReady() {
+          console.log("onYouTubePlayerAPIReady called");
+          player = new YT.Player('player', {
+            videoId: 'eE-dwpWpscU',
+            events: {
+              'onReady': onPlayerReady
+            }
+          });
+        }
+
+        function onPlayerReady(event) {
+          console.log("player object created");
+        }
+      </script>
+</head>
+<body>
+    <div id="player"></div>
+</body>
