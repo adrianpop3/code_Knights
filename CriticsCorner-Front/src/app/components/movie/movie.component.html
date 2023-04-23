@@ -1,24 +1,25 @@
-<head>
-    <script src="https://www.youtube.com/player_api"></script>
-    <script>
-        // create a new player object
-        var player;
-      
-        function onYouTubePlayerAPIReady() {
-          console.log("onYouTubePlayerAPIReady called");
-          player = new YT.Player('player', {
-            videoId: 'eE-dwpWpscU',
-            events: {
-              'onReady': onPlayerReady
-            }
-          });
-        }
-
-        function onPlayerReady(event) {
-          console.log("player object created");
-        }
-      </script>
-</head>
 <body>
-    <div id="player"></div>
-</body>
+    <app-navbar></app-navbar>
+
+    <div class="firstRow">
+        <div class="moviePlayer">
+            <iframe width="700" height="400" src="../../../assets/movies/avatar_trailer.mp4" frameborder="0" allowfullscreen></iframe>
+        </div>
+      
+          <div class="movieMainInformation">
+              <p class="movieName">Avatar - The Way of Water</p>
+              <p class="movieCast">Cast: Sam Worthington, Stephen Lang, Sigourney Weaver, Michelle Rodriguez</p>
+          </div>
+    </div>
+
+    <div class="secondRow">
+        <button type="button" class="btn btn-dark">222 Likes</button>
+        <button type="button" class="btn btn-dark">34 Dislikes</button>
+        <p class="movieRating">7.3 Rank</p>
+    </div>
+
+
+    <p class="movieDescription"><b>Description:</b><br>"Avatar: The Way of Water" is a sequel to "Avatar" and follows a new protagonist, Naitiri, on a quest to save her underwater world from humans. It promises stunning visuals, technology and explores themes of environmentalism and spirituality. The film is set to release on December 16, 2022.</p>
+
+    <p class="movieReviews"><b>Reviews</b></p>
+  </body>

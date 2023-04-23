@@ -1,0 +1,55 @@
+body{
+    background-color: rgba(251,243,228,1);
+}
+
+.moviePlayer{
+    padding-top: 40px;
+    padding-left: 40px;
+}
+
+.firstRow{
+    display: flex;
+    flex-direction: row;
+}
+
+.movieMainInformation{
+    padding-top: 150px;
+    padding-left: 60px;
+}
+
+.movieMainInformation .movieName{
+    text-decoration: none;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.movieMainInformation .movieCast{
+    width: 800px;
+    text-decoration: none;
+    font-size: 30px;
+    font-style: italic;
+}
+
+.secondRow{
+    padding-left: 50px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.secondRow > * {
+    margin-right: 20px;
+}
+
+.movieDescription{
+    padding-left: 40px;
+    padding-top: 10px;
+    font-size: 20px;
+    width: 1400px;
+}
+
+.movieReviews{
+    padding-left: 40px;
+    padding-top: 10px;
+    font-size: 20px;
+}
