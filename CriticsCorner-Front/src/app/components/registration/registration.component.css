@@ -1,8 +1,3 @@
-:root{
-    --pink: #db5d7a;
-    --pinkhover:  #be3455;
-}
-
 body {
     height: 100vh;
     background: linear-gradient(0deg, rgba(190,52,85,1) 0%, rgba(251,243,228,1) 100%);
@@ -10,8 +5,8 @@ body {
 
 .central {
     background: rgba(251,243,228,1);
-    height: 500px;
-    width: 800px;
+    height: 450px;
+    width: 700px;
 
     margin: auto;
     position: absolute;
@@ -34,30 +29,36 @@ body {
 
 .logo {
     display: flex;
-    height: 400px;
-    width: 400px;
-    justify-content: flex-end;
+    align-self: center;
+    height: 250px;
+    width: 250px;
+    padding-left: 30px;
+    justify-content: center;
     align-items: center;
-    border-right: 5px solid rgba(190,52,85,1);
-    border-top-right-radius: 100%;
-    border-bottom-right-radius: 100%;
-    --webkit-appearence: none;
-    }
-
-img{
-    padding-right: 30px;
-    height: 120px;
-    width: 220px;
+    margin-bottom: 90px
 }
 
+img{
+    height: 100px;
+    width: auto;
+}
+    
+.vertical-line {
+    height: 200px;
+    align-self: center;
+    border-left: 3px solid rgba(190,52,85,1);
+    margin-bottom: 70px
+}
+    
 form{
-    height: 400px;
-    width: 500px;
+    height: 350px;
+    width: 447px;
     display: flex;
-    padding-left: 150px;
+    padding-left: 100px;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
+    padding-bottom: 10px
 }
 
 .input-group, input{
@@ -72,6 +73,40 @@ form input::placeholder {
 .input-group i{
     text-align: center;
     padding-top: 10px;
+}
+
+
+.form-elements-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.form-elements-bottom button {
+    margin-right: 15px;
+    background-color: rgba(2,0,36,1);
+    border-color: rgba(2,0,36,1);
+}
+
+.form-elements-bottom button:hover {
+    margin-right: 15px;
+    background-color: rgb(51, 49, 85); 
+    border-color: rgb(51, 49, 85); 
+}
+
+.form-elements-bottom h6{
+    padding-top: 10px;
+}
+
+.form-elements-bottom h6 a {
+    text-decoration: none;
+    color: rgba(2,0,36,1);
+}
+  
+.form-elements-bottom h6 a:hover {
+    text-decoration: none;
+    color: rgb(51, 49, 85);
 }
 
 

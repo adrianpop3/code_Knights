@@ -1,28 +1,31 @@
 <body>
-<div class="central">
-    <div class="title"><h1>Login</h1></div>     
+    <div class="central">
+        <div class="title"><h1>Login</h1></div>
         <div class="content">
-            <div class="logo"><img src="../../assets/logo/logo_1.png" alt="logo"></div>
-            
+            <div class="logo"><img src="../../assets/logo/logo_1.png" alt="logo" /></div>
+
+            <div class="vertical-line"></div>
+
             <div class="information">
                 <form (ngSubmit)="userLogin()">
                     <h4>Glad to have you back, Critic!</h4>
 
                     <div class="input-group mb-3">
                         <i class="fa-solid fa-user input-group-text"></i>
-                        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="username" [(ngModel)]="user.username">
+                        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="username" [(ngModel)]="user.username" />
                     </div>
 
                     <div class="input-group mb-3">
                         <i class="fa-solid fa-lock input-group-text"></i>
-                        <input type="password" id="inputPassword" class="form-control" aria-labelledby="passwordHelpInline" placeholder="Password" name="password" [(ngModel)]="user.password">
+                        <input type="password" id="inputPassword" class="form-control" aria-labelledby="passwordHelpInline" placeholder="Password" name="password" [(ngModel)]="user.password" />
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-sm" id="liveAlertBtn">Login</button>
-
-                    <div class="reglink"><h6><a routerLink="/register">Not a Critic yet? Register here!</a></h6></div>
+                    <div class="form-elements-bottom">
+                        <button type="submit" class="btn btn-primary btn-sm" id="liveAlertBtn">Login</button>
+                        <h6><a routerLink="/register">Not a Critic yet? Register here!</a></h6>
+                    </div>
+                    
                 </form>
-
             </div>
         </div>
     </div>
