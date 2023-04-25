@@ -27,4 +27,46 @@ export class HomeComponent implements OnInit{
       }
     );
   }
+
+  searchMovies(key: string): void {
+    const results: Movie[] = [];
+
+    for (const movie of this.movies) {
+      if (movie.title.toLowerCase().indexOf(key.toLowerCase()) !== -1
+       || movie.category.toLowerCase().indexOf(key.toLowerCase()) !== -1) {
+        results.push(movie);
+      }
+    }
+    this.movies = results;
+    if(results.length === 0 || !key) {
+      this.getMovies();
+    }
+  }
+
+  public onOpenModal(movie: Movie, mode: string): void {
+    const container = document.getElementById('main-container');
+    const button = document.createElement('button');
+
+    button.type = 'button';
+    button.style.display = 'none';
+    button.setAttribute('data-toggle', 'modal');
+
+    switch(mode) {
+      case 'add': {
+        button.setAttribute('data-target', '#addMovieModal');
+        break;
+      }
+      case 'edit': {
+        button.setAttribute('data-target', '#editMovieModal');
+        break;
+      }
+      case 'delete': {
+        button.setAttribute('data-target', '#deleteMovieModal');
+        break;
+      }
+    }
+
+    container?.appendChild(button);
+    button.click();
+  }
 }
