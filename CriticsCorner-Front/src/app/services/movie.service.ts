@@ -7,12 +7,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MovieService {
-  private baseUrl="http://localhost:8081/home";
+  public baseUrl="http://localhost:8081/home";
 
   constructor(private http: HttpClient) { }
 
   public getMovies(): Observable<Movie[]> {
     return this.http.get<Movie[]>(`${this.baseUrl}/all`);
+  }
+
+  public getMovie(movie: Movie): Observable<Movie> {
+    return this.http.get<Movie>(`${this.baseUrl}/movie/${movie.id}`);
   }
 
   public addMovie(movie: Movie): Observable<Movie> {
