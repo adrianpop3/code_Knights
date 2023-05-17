@@ -252,3 +252,12 @@
       .html {
         background: rgba(251,243,228,1);
       }
+
+.movie-form-btn {
+    background-color: #be3455;
+    color: #fbf3e4;
+}
+
+.movie-form {
+    background-color: #fbf3e4;
+}
