@@ -8,8 +8,8 @@ import { User } from '../classes/user';
   providedIn: 'root'
 })
 export class RegistrationService {
-
-  baseUrl="http://localhost:8081/auth/register";
+  public baseUrl="http://localhost:8081/auth/register";
+  
   constructor(private httpClient: HttpClient) { 
   }
 
