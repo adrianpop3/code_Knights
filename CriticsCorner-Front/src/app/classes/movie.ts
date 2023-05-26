@@ -1,5 +1,5 @@
 export interface Movie {
-    id: number | undefined;
+    id: number;
     title: string;
     category: string;
     ranking: number;
