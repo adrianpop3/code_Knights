@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -24,4 +25,11 @@ public class Movie implements Serializable {
     private Float ranking;
     private String description;
     private String imageUrl;
+
+    @OneToMany(mappedBy = "movie")
+    private List<Review> reviews;
+
+    public void setReview(Review review) {
+        reviews.add(review);
+    }
 }
