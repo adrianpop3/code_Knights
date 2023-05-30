@@ -7,6 +7,7 @@ import { ToastrService } from 'ngx-toastr';
 
 import { MovieService } from './movie.service';
 import { Movie } from 'app/classes/movie';
+import { empty } from 'rxjs';
 
 fdescribe('MovieService', () => {
   let service: MovieService;
@@ -44,15 +45,25 @@ fdescribe('MovieService', () => {
         ranking: 8,
         description: 'Test Service',
         imageUrl: 'something/images',
+        likes: 2,
+        dislikes: 3,
+        reviews: [],
+        trailerUrl: 'something/images',
+        cast: 'Johnny'
       },
-      {
+      { 
         id: 1,
         title: 'Test',
         category: 'Mock',
         ranking: 8,
         description: 'Test Service',
         imageUrl: 'something/images',
-      }
+        likes: 2,
+        dislikes: 3,
+        reviews: [],
+        trailerUrl: 'something/images',
+        cast: 'Johnny'
+      },
       ];
 
       service.getMovies().subscribe((movies) => {
@@ -69,12 +80,17 @@ fdescribe('MovieService', () => {
   describe('#addMovie()', () => {
     it('should return a new Observable<Movie>', () => {
       const dummyMovie: Movie = {
-        id: 1,
-        title: 'Test',
-        category: 'Mock',
-        ranking: 8,
-        description: 'Test Service',
-        imageUrl: 'something/images',
+          id: 1,
+          title: 'Test',
+          category: 'Mock',
+          ranking: 8,
+          description: 'Test Service',
+          imageUrl: 'something/images',
+          likes: 2,
+          dislikes: 3,
+          reviews: [],
+          trailerUrl: 'something/images',
+          cast: 'Johnny'
       };
 
       service
@@ -93,11 +109,16 @@ fdescribe('MovieService', () => {
     it('should return an Observable<Movie> with updated value', () => {
       const dummyMovie: Movie = {
         id: 1,
-        title: 'Test',
-        category: 'Mock',
-        ranking: 8,
-        description: 'Test Service',
-        imageUrl: 'something/images',
+          title: 'Test',
+          category: 'Mock',
+          ranking: 8,
+          description: 'Test Service',
+          imageUrl: 'something/images',
+          likes: 2,
+          dislikes: 3,
+          reviews: [],
+          trailerUrl: 'something/images',
+          cast: 'Johnny'
       };
 
       service
@@ -118,11 +139,16 @@ fdescribe('MovieService', () => {
     it('should delete given Observable<Movie>', () => {
       const dummyMovie: Movie = {
         id: 1,
-        title: 'Test',
-        category: 'Mock',
-        ranking: 8,
-        description: 'Test Service',
-        imageUrl: 'something/images',
+          title: 'Test',
+          category: 'Mock',
+          ranking: 8,
+          description: 'Test Service',
+          imageUrl: 'something/images',
+          likes: 2,
+          dislikes: 3,
+          reviews: [],
+          trailerUrl: 'something/images',
+          cast: 'Johnny'
       };
 
       service.deleteMovie(dummyMovie.id).subscribe((res) => {
@@ -141,11 +167,16 @@ fdescribe('MovieService', () => {
     it('should return an Observable<Movie>', () => {
       const dummyMovie: Movie = {
         id: 1,
-        title: 'Test',
-        category: 'Mock',
-        ranking: 8,
-        description: 'Test Service',
-        imageUrl: 'something/images',
+          title: 'Test',
+          category: 'Mock',
+          ranking: 8,
+          description: 'Test Service',
+          imageUrl: 'something/images',
+          likes: 2,
+          dislikes: 3,
+          reviews: [],
+          trailerUrl: 'something/images',
+          cast: 'Johnny'
       }
 
       service

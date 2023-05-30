@@ -3,22 +3,22 @@
 
     <div class="firstRow">
         <div class="moviePlayer">
-            <iframe width="700" height="400" src="https://www.youtube.com/embed/d9MyW72ELq0" frameborder="0" allowfullscreen></iframe>
+            <iframe width="700" height="400" src="{{ movie?.trailerUrl }}" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="movieMainInformation">
-            <p class="movieName">Avatar - The Way of Water</p>
-            <p class="movieCast">Cast: Sam Worthington, Stephen Lang, Sigourney Weaver, Michelle Rodriguez</p>
+            <p class="movieName">{{ movie?.title }}</p>
+            <p class="movieCast">{{ movie?.cast }}</p>
         </div>
     </div>
 
     <div class="secondRow">
-        <button type="button" class="btn btn-outline-secondary">222 Likes</button>
-        <button type="button" class="btn btn-outline-secondary">34 Dislikes</button>
-        <p class="movieRating">7.3 Rank</p>
+        <button type="button" class="btn btn-outline-secondary" (click)="addLike()">{{ movie?.likes }} Likes</button>
+        <button type="button" class="btn btn-outline-secondary" (click)="addDislike()">{{ movie?.dislikes }} Dislikes</button>
+        <p class="movieRating">{{ movie?.ranking }}</p>
     </div>
 
 
-    <p class="movieDescription"><b>Description:</b><br>"Avatar: The Way of Water" is a sequel to "Avatar" and follows a new protagonist, Naitiri, on a quest to save her underwater world from humans. It promises stunning visuals, technology and explores themes of environmentalism and spirituality. The film is set to release on December 16, 2022.</p>
+    <p class="movieDescription"><b>Description:</b><br>{{ movie?.description }}</p>
 
     <p class="movieReviews"><b>Reviews</b></p>
 
@@ -31,45 +31,29 @@
                     </div>
                     <div class="input-group mb-4">
                         <i class="fa-regular fa-comment input-group-text"></i>
-                        <input type="text" id="addANote" class="form-control" placeholder="Let us hear your critique.." />
-                        <button type="button" class="btn btn-outline-secondary">Submit</button>
+                        <input type="text" id="addANote" class="form-control" placeholder="Let us hear your critique.." [(ngModel)]="review.text"/>
+                        <button type="button" class="btn btn-outline-secondary" (click)="postReview()">Submit</button>
                     </div>
     
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <p>The story is paper-thin.</p>
-    
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex flex-row align-items-center">
-                                    <img src="../../../assets/logo/grandcritic_logo.png" alt="avatar" width="30" height="auto" />
-                                    <p class="small mb-0 ms-2">Andrei Stratan <i>~The Grand Critic~</i></p>    
-                                </div>
 
-                                <div class="d-flex flex-row align-items-center">
-                                    <p class="small text-muted mb-0">21.02.2023</p>
+                    <div *ngFor="let review of reviews"  class="col-md-6 col-xl-3 mt-1-9 wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <p>{{ review?.text }}</p>
+        
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <img src="../../../assets/logo/grandcritic_logo.png" alt="avatar" width="30" height="auto" />
+                                        <p class="small mb-0 ms-2">{{ review?.user?.username }} <i>~The Grand Critic~</i></p>    
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center">
+                                        <p class="small text-muted mb-0">{{ review?.date }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <p>The dialogue was written by a 16-year old intern.</p>
-    
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex flex-row align-items-center">
-                                    <img src="../../../assets/logo/cinephilecadet_logo.png" alt="avatar" width="30" height="auto" />
-                                    <p class="small mb-0 ms-2">George Milosav <i>~Cinephile Cadet~</i></p>    
-                                </div>
-
-                                <div class="d-flex flex-row align-items-right">
-                                    <p class="small text-muted mb-0">02.05.2023</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-    
         </div>
     </div>
     

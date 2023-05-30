@@ -4,4 +4,7 @@ export class User {
     password!: string;
     confirmpassword!: string
     email!: string;
+
+    photoURL!: string;
+    alias!: string
 }

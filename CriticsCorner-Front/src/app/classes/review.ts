@@ -1,7 +1,9 @@
+import { Movie } from "./movie";
 import { User } from "./user";
 
-export interface Review {
-    user: User;
-    text: string;
-    date: string;
+export class Review {
+    user!: User;
+    text!: string;
+    date!: string;
+    movie!: Movie; 
 }

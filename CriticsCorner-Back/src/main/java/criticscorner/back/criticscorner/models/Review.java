@@ -22,6 +22,8 @@ public class Review implements Serializable {
 
     private String text;
 
+    private String date;
+
     @ManyToOne
     private User reviewer;
 
