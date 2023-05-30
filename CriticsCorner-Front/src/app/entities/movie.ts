@@ -1,3 +1,5 @@
+import { Review } from "./review";
+
 export interface Movie {
     id: number;
     title: string;
@@ -5,4 +7,10 @@ export interface Movie {
     ranking: number;
     description: string;
     imageUrl: string;
+
+    reviews: Review[];
+    likes: number;
+    dislikes: number;
+    trailerUrl: string;
+    cast: string;
 }

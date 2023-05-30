@@ -2,6 +2,7 @@ package criticscorner.back.criticscorner.services;
 
 import criticscorner.back.criticscorner.exceptions.MovieNotFoundException;
 import criticscorner.back.criticscorner.models.Movie;
+import criticscorner.back.criticscorner.models.Review;
 import criticscorner.back.criticscorner.repositories.MovieRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,13 +20,13 @@ public class MovieService {
         this.movieRepository = movieRepository;
     }
 
-    public Movie addMovie (Movie movie) {
+    public Movie addMovie(Movie movie) {
         return movieRepository.save(movie);
     }
 
     public Movie findMovieById(Long id) {
         return movieRepository.findMovieById(id).orElseThrow(
-                () -> new MovieNotFoundException("Movie with id " + id +" was not found."));
+                () -> new MovieNotFoundException("Movie with id " + id + " was not found."));
     }
 
     public List<Movie> findAllMovies() {
