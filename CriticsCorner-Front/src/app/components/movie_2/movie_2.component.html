@@ -1,0 +1,75 @@
+<body>
+    <app-navbar></app-navbar>
+
+    <div class="firstRow">
+        <div class="moviePlayer">
+            <iframe width="700" height="400" src="https://www.youtube.com/embed/tmHKJk6K9RA" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="movieMainInformation">
+            <p class="movieName">Harry Potter and the Cursed Child </p>
+            <p class="movieCast">Cast: Daniel Radcliffe, Emma Watson, Rupert Grint, William Franklyn-Miller</p>
+        </div>
+    </div>
+
+    <div class="secondRow">
+        <button type="button" class="btn btn-outline-secondary" (click)="addLike()">21.345 Likes</button>
+        <button type="button" class="btn btn-outline-secondary" (click)="addDislike()">987 Dislikes</button>
+        <p class="movieRating">9.4 Rank</p>
+    </div>
+
+
+    <p class="movieDescription"><b>Description:</b><br>Harry Potter and the Cursed Child” is about the journey Albus takes while growing up, and the roles he and his best friend, Scorpius (Draco Malfoy's son), play when dark forces, perhaps in league with Voldemort, once again threaten the fate of the planet.</p>
+
+    <p class="movieReviews"><b>Reviews</b></p>
+
+
+    <div class="reviewSection">
+        <div class="col-md-8 col-lg-6">
+                    <div class="userInfo d-flex flex-row align-items-center">
+                        <img src="../../../assets/logo/cinephilecadet_logo.png" alt="avatar" width="50" height="auto" />
+                        <p class="small mb-0 ms-2">George Milosav <i>~Cinephile Cadet~</i></p>
+                    </div>
+                    <div class="input-group mb-4">
+                        <i class="fa-regular fa-comment input-group-text"></i>
+                        <input type="text" id="addANote" class="form-control" placeholder="Let us hear your critique.." [(ngModel)]="review.text"/>
+                        <button type="button" class="btn btn-outline-secondary" (click)="postReview()">Submit</button>
+                    </div>
+    
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <p>Really good storytelling.</p>
+    
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex flex-row align-items-center">
+                                    <img src="../../../assets/logo/grandcritic_logo.png" alt="avatar" width="30" height="auto" />
+                                    <p class="small mb-0 ms-2">Andrei Petru <i>~The Grand Critic~</i></p>    
+                                </div>
+
+                                <div class="d-flex flex-row align-items-center">
+                                    <p class="small text-muted mb-0">21.02.2023</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <p>Great representation of an old-time world.</p>
+    
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex flex-row align-items-center">
+                                    <img src="../../../assets/logo/cinephilecadet_logo.png" alt="avatar" width="30" height="auto" />
+                                    <p class="small mb-0 ms-2">Mihai France <i>~Cinephile Cadet~</i></p>    
+                                </div>
+
+                                <div class="d-flex flex-row align-items-right">
+                                    <p class="small text-muted mb-0">02.05.2023</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+    
+  </body>
