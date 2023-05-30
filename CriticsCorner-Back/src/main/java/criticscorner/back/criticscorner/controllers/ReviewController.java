@@ -26,8 +26,9 @@ public class ReviewController {
 
     @GetMapping("/movie/find/{id}/postreview")
     public ResponseEntity<Review> postReview(@RequestBody Review reviewData) {
-        User user = userRepository.findByUsername(reviewData.getReviewer().getUsername());
+        User user = userRepository.findByUsername(reviewData.getReviewer().getUsername()).orElse(null);
 
+        
         Movie movie = movieRepository.findMovieById(reviewData.getMovie().getId()).orElse(null);
         Review review = new Review();
 

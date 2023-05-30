@@ -1,8 +1,8 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Movie } from 'app/classes/movie';
-import { Review } from 'app/classes/review';
+import { Movie } from 'app/entities/movie';
+import { Review } from 'app/entities/review';
 import { ReviewService } from 'app/services/review.service';
 
 @Component({
