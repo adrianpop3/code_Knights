@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,7 +11,9 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { RouterModule } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
-
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptorProvider, InterceptorInterceptor } from './auth.interceptor';
+import { HasRoleDirective } from './has-role.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { ToastrModule } from 'ngx-toastr';
     LoginComponent,
     HomeComponent,
     NavbarComponent,
-    MovieComponent
+    MovieComponent,
+    HasRoleDirective,
   ],
   imports: [
     BrowserModule,
@@ -28,9 +31,12 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     HttpClientModule,
     RouterModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    AuthInterceptorProvider,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

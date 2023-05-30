@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Movie } from 'app/classes/movie';
+import { Movie } from 'app/entities/movie';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
-  public baseUrl="http://localhost:8081/home";
+  public baseUrl="http://localhost:8081/auth/home";
 
   constructor(private http: HttpClient) { }
 

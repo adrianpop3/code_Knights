@@ -9,27 +9,27 @@
         <div class="vertical-line"></div> 
         
         <div class="information">
-            <form (ngSubmit)="userRegister()">
+            <form [formGroup]="registerForm" (ngSubmit)="userRegister()">
                 <h4>Glad to see you joining!</h4>
                 <div id="liveAlertPlaceholder"></div>
                 <div class="input-group mb-3">
                   <i class="fa-solid fa-envelope fa-user input-group-text"></i>
-                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="E-mail" name="email" [(ngModel)]="user.email">
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="E-mail" name="email" formControlName="email">
                 </div>
               
                 <div class="input-group mb-3">
                   <i class="fa-solid fa-user input-group-text"></i>
-                  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="username" [(ngModel)]="user.username">
+                  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="username" formControlName="username">
                 </div>
 
                 <div class="input-group mb-3">
                     <i class="fa-solid fa-lock input-group-text"></i>
-                    <input type="password" id="inputPassword" class="form-control" aria-labelledby="passwordHelpInline" placeholder="Password" name="password" [(ngModel)]="user.password">
+                    <input type="password" id="inputPassword" class="form-control" aria-labelledby="passwordHelpInline" placeholder="Password" name="password" formControlName="password">
                   </div>
 
                   <div class="input-group mb-3">
                     <i class="fa-solid fa-lock input-group-text"></i>
-                    <input type="password" id="inputPasswordConfirm" class="form-control" aria-labelledby="passwordHelpInline" placeholder="Confirm Password" name="confirmpassword" [(ngModel)]="user.confirmpassword">
+                    <input type="password" id="inputPasswordConfirm" class="form-control" aria-labelledby="passwordHelpInline" placeholder="Confirm Password" name="confirmpassword" formControlName="confirmpassword">
                   </div>
 
                   <div class="form-elements-bottom">

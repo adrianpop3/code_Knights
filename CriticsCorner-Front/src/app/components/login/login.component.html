@@ -7,17 +7,17 @@
             <div class="vertical-line"></div>
 
             <div class="information">
-                <form (ngSubmit)="userLogin()">
+                <form [formGroup]="loginForm" (ngSubmit)="userLogin()">
                     <h4>Glad to have you back, Critic!</h4>
 
                     <div class="input-group mb-3">
                         <i class="fa-solid fa-user input-group-text"></i>
-                        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="username" [(ngModel)]="user.username" />
+                        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="username" formControlName="username" />
                     </div>
 
                     <div class="input-group mb-3">
                         <i class="fa-solid fa-lock input-group-text"></i>
-                        <input type="password" id="inputPassword" class="form-control" aria-labelledby="passwordHelpInline" placeholder="Password" name="password" [(ngModel)]="user.password"/>
+                        <input type="password" id="inputPassword" class="form-control" aria-labelledby="passwordHelpInline" placeholder="Password" name="password" formControlName="password"/>
                     </div>
 
                     <div class="form-elements-bottom">

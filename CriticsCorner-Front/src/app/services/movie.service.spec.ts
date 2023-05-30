@@ -6,7 +6,7 @@ import {
 import { ToastrService } from 'ngx-toastr';
 
 import { MovieService } from './movie.service';
-import { Movie } from 'app/classes/movie';
+import { Movie } from 'app/entities/movie';
 
 fdescribe('MovieService', () => {
   let service: MovieService;

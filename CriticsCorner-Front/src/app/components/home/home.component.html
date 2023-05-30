@@ -1,23 +1,27 @@
 <html>  
   <div class="bg-color">
 
-        <nav class="navbar">
-            <div class="logo">
-                <img src="./../../../assets/logo/logo_v3.png" alt="Logo" />
+    <nav class="navbar">
+        <div class="logo">
+            <img src="./../../../assets/logo/logo_v3.png" alt="Logo" />
+        </div>
+    
+        <div class="search">
+            <i class="fa fa-search"></i>
+            <input type="search" (ngModelChange)="searchMovies(key.value)" #key="ngModel" ngModel name="key" class="form-control form-input" placeholder="Search movies..." />
+        </div>
+    
+        <div class="actions">
+            <div class="d-inline-block me-3">
+                <a (click)="logout()" class="styled-icons-item fa fa-sign-out"></a>
             </div>
-
-            <div class="col-md-6">
-                <div class="search">
-                    <i class="fa fa-search"></i>
-                        <input type="search" (ngModelChange)="searchMovies(key.value)" #key="ngModel" ngModel name="key" class="form-control form-input" 
-                        placeholder="Search movies..." />
-                </div>
+            <div class="d-inline-block me-3">
+                <a *appHasRole="'ADMIN'" (click)="onOpenModal(undefined, 'add')" type="button" class="styled-icons-item fa fa-plus" data-bs-toggle="modal" data-bs-target="#addMovieModal"></a>
             </div>
-
-            <div class="buttons">
-                <a (click)="onOpenModal(undefined, 'add')" type="button" class="styled-icons-item fa fa-plus" data-bs-toggle="modal" data-bs-target="#addMovieModal"></a>
-            </div>
-        </nav>
+        </div>
+    </nav>
+    
+    
 
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
             <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL75StwEJmIZsW/yk1p0UksJXm2tB" crossorigin="anonymous"> -->
@@ -30,9 +34,9 @@
                                             <div class="thumb"><img src="{{ movie?.imageUrl }}" class="rounded-circle card-img" alt="..."></div>
                                             <div class="team-social">
                                                 <ul class="styled-icons">
-                                                    <li><a (click)="onOpenModal(movie, 'edit')" type="button" class="styled-icons-item fa fa-pen" data-bs-toggle="modal" data-bs-target="#editMovieModal"></a></li>
+                                                    <li><a *appHasRole="'ADMIN'" (click)="onOpenModal(movie, 'edit')" type="button" class="styled-icons-item fa fa-pen" data-bs-toggle="modal" data-bs-target="#editMovieModal"></a></li>
                                                     <li><a routerLink="movie" class="styled-icons-item"><i class="fa fa-eye"></i></a></li>
-                                                    <li><a (click)="onOpenModal(movie, 'delete')" type="button" class="styled-icons-item fa fa-trash" data-bs-toggle="modal" data-bs-target="#deleteMovieModal"></a></li>
+                                                    <li><a *appHasRole="'ADMIN'" (click)="onOpenModal(movie, 'delete')" type="button" class="styled-icons-item fa fa-trash" data-bs-toggle="modal" data-bs-target="#deleteMovieModal"></a></li>
                                                 </ul>
                                             </div>
                                         </div>

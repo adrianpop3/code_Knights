@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Movie } from 'app/classes/movie';
+import { Movie } from 'app/entities/movie';
 import { MovieService } from 'app/services/movie.service';
 import { NgForm } from '@angular/forms';
+import { AuthService } from 'app/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,7 @@ export class HomeComponent implements OnInit{
   deleteMovie: Movie | undefined;
   editMovie: Movie | undefined;
 
-  constructor(private movieService: MovieService) {}
+  constructor(private movieService: MovieService, private authService: AuthService) {}
 
   ngOnInit(): void {
       this.getMovies();
@@ -107,6 +108,17 @@ export class HomeComponent implements OnInit{
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
+      }
+    );
+  }
+
+  logout(): void {
+    this.authService.logout().subscribe(
+      () => {
+        console.log('Logged out successfully');
+      },
+      (error) => {
+        console.error('Logout failed:', error);
       }
     );
   }

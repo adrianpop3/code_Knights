@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { LoginService } from '../../services/login.service';
-import { User } from 'app/classes/user';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,19 +9,31 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  user: User = new User();
+  
+  loginForm = new FormGroup({
+    username: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z]')]),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+  })
 
-  constructor(private loginService: LoginService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
-  // loginForm = new FormGroup({
-  //   username: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z]')]),
-  //   password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-  // })
+  submitForm() {
+    if(this.loginForm.invalid) {
+      return;
+    }
+  }
 
   userLogin() {
-    this.loginService.loginUser(this.user)
-      .subscribe(data => {
+    this.authService.loginUser(
+      this.loginForm.get('username')?.value as string,
+      this.loginForm.get('password')?.value as string,
+    ).subscribe(
+      (response: any) => {
+        localStorage.setItem('token', response.token);
         this.router.navigate(['/home']);
-      }, error => alert("Login failed!"));
+      },
+      (error: any) => alert('Login failed!')
+    );
   }
+  
 }

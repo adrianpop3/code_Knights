@@ -261,3 +261,23 @@
 .movie-form {
     background-color: #fbf3e4;
 }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .search {
+    width: 39%; 
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+  }
+  
+  .actions {
+    display: flex;
+  }
+  
+  
+  

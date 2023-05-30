@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'app/classes/user';
-import { RegistrationService } from 'app/services/registration.service';
+import { AuthService } from 'app/services/auth.service';
 
 @Component({
   selector: 'app-registration',
@@ -10,18 +10,34 @@ import { RegistrationService } from 'app/services/registration.service';
 })
 export class RegistrationComponent implements OnInit{
 
-  user:User =new User();
+  registerForm = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z@]')]),
+    username: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z]')]),
+    password: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    confirmpassword: new FormControl('', [Validators.required, Validators.minLength(3)]),
+  })
 
-  constructor(private registerService: RegistrationService, private router: Router){}
+  constructor(private authService: AuthService, private router: Router) { }
+
+  submitForm() {
+    if(this.registerForm.invalid) {
+      return;
+    }
+  }
 
   ngOnInit(): void{
   }
 
   userRegister() {
-    this.registerService.registerUser(this.user)
-      .subscribe(data => {
-        this.router.navigate(['/login']);
-    },  error=>alert("Sorry, registration failed!"));
+    this.authService.registerUser(
+      this.registerForm.get('email')?.value as string,
+      this.registerForm.get('username')?.value as string,
+      this.registerForm.get('password')?.value as string,
+      ).subscribe(
+        (response: any) => {
+          this.router.navigate(['/login']);
+        },  
+        (error: any) => alert("Sorry, registration failed!"));
   }
 
 }
