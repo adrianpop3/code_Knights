@@ -16,7 +16,7 @@
                 <a (click)="logout()" class="styled-icons-item fa fa-sign-out"></a>
             </div>
             <div class="d-inline-block me-3">
-                <a *appHasRole="'ADMIN'" (click)="onOpenModal(undefined, 'add')" type="button" class="styled-icons-item fa fa-plus" data-bs-toggle="modal" data-bs-target="#addMovieModal"></a>
+                <a (click)="onOpenModal(undefined, 'add')" type="button" class="styled-icons-item fa fa-plus" data-bs-toggle="modal" data-bs-target="#addMovieModal"></a>
             </div>
         </div>
     </nav>
@@ -34,9 +34,9 @@
                                             <div class="thumb"><img src="{{ movie?.imageUrl }}" class="rounded-circle card-img" alt="..."></div>
                                             <div class="team-social">
                                                 <ul class="styled-icons">
-                                                    <li><a *appHasRole="'ADMIN'" (click)="onOpenModal(movie, 'edit')" type="button" class="styled-icons-item fa fa-pen" data-bs-toggle="modal" data-bs-target="#editMovieModal"></a></li>
+                                                    <li><a (click)="onOpenModal(movie, 'edit')" type="button" class="styled-icons-item fa fa-pen" data-bs-toggle="modal" data-bs-target="#editMovieModal"></a></li>
                                                     <li><a routerLink="movie" class="styled-icons-item"><i class="fa fa-eye"></i></a></li>
-                                                    <li><a *appHasRole="'ADMIN'" (click)="onOpenModal(movie, 'delete')" type="button" class="styled-icons-item fa fa-trash" data-bs-toggle="modal" data-bs-target="#deleteMovieModal"></a></li>
+                                                    <li><a (click)="onOpenModal(movie, 'delete')" type="button" class="styled-icons-item fa fa-trash" data-bs-toggle="modal" data-bs-target="#deleteMovieModal"></a></li>
                                                 </ul>
                                             </div>
                                         </div>
